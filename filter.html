@@ -1,0 +1,96 @@
+{% include "userheader.html" %}
+<!-- 
+Body Section 
+-->
+
+<div class="well well-small">
+		<h1>FILTERS<small class="pull-right">  </small></h1>
+	<hr class="soften"/>	
+<form action="/orderaction/">
+
+
+<html>
+
+   <head>
+      <title>HTML Table Colspan/Rowspan</title>
+   </head>
+	
+ 
+<CENTER>
+	<table border="1">
+                <tr>
+					{% for i in f %}
+						<td>{{i.fname}} </td>
+						<td>
+						<table  border="1">
+							
+								
+				
+									 {% for j in f1 %}
+									 {% ifequal i.fname j.fname%}
+									 <TR>
+									  <TD>
+									     
+										 {{j.fvalue}} 
+									    
+										</TD>
+										<td><A HREF="/filterdelete?fname={{i.fname}} &fvalue={{j.fvalue}}">DELETE </A></td>
+										</TR>
+								{% endifequal %}
+							</tr>
+									{% endfor %}
+				
+						 </table>
+						</td>
+						<TD><A HREF="/filterdelete1?fname={{i.fname}}">DELETE </A></TD>
+              
+						</tr>
+            
+					{% endfor %}
+					
+			  </table>
+              </CENTER>
+ 
+</div>
+<!-- 
+Clients 
+-->
+<br/>
+<br/>
+<section class="our_client">
+	<hr class="soften"/>
+	
+	
+	
+</section>
+
+<!--
+Footer
+-->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</div><!-- /container -->
+
+<div class="copyright">
+<div class="container">
+	
+	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
+</div>
+</div>
+<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="assets/js/shop.js"></script>
+  </body>
+</html>
+               
+              
+
+     
+      

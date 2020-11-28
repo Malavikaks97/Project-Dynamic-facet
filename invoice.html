@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<div id='DivIdToPrint' style="width:600px;" >
+  <head>
+  {% load staticfiles %}
+    <meta charset="utf-8">
+    <title>Example 1</title>
+    <link rel="stylesheet" href="{% static 'bill/style.css ' %}" media="all" />
+  </head>
+  <body>
+    <header class="clearfix">
+
+    </header>
+    <main>
+	
+	<div id='DivIdToPrint' style="width:800px;" >
+<form action="/download?oid={{oid}}">
+	  <table>
+	  
+	  <div id="logo">
+        <img src="/static/bill/logo.png">
+      </div>
+      <h1>INVOICE </h1>
+	  
+	  <tr>
+	  <td>
+      <div id="project" align="left">
+	  <div><span>  <h2>ORDER ID : </span>{{oid}}</h2></div>
+	  {% for i in user %}
+        <div align="left"><span> NAME :</span> {{i.uname}}</div>
+        <div align="left" ><span>ADDRESS :</span> {{i.addr}}</div>
+        <div align="left"><span>EMAIL :</span> {{i.email}}</div>
+		 <div align="left"><span>PHONE :</span>{{i.phone}}</div>
+        <div align="left" ><span>DATE :</span> {{today}}</div>
+     
+		 {% endfor %}
+      </div>
+	  </td>
+	  <td>
+      <div id="company" class="clearfix">
+        <div>Company Name</div>
+        <div>455 Foggy Heights,<br /> AZ 85004, US</div>
+        <div>(602) 519-0450</div>
+        <div><a href="mailto:company@example.com">company@example.com</a></div>
+      </div>
+	  </td>
+	  
+	  </tr>
+	  </table>
+      <table>
+        <thead>
+          <tr>
+            <th class="service">ITEM CODE</th>
+            <th class="desc">ITEM NAME</th>
+            <th  class="unit"> &nbsp;&nbsp;&nbsp;PRICE</th>
+            <th class="qty" > QTY</th>
+            <th class="total"> TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+		{% for i in list %}
+          <tr>
+            <td class="service">{{i.itemid}}</td>
+            <td class="desc">{{i.itemname}}</td>
+            <td class="unit">Rs {{i.amt1}}</td>
+            <td class="qty">{{i.qty1}}</td>
+            <td class="total">{{i.tamt}}</td>
+          </tr>
+          
+		  {% endfor %}
+          <tr>
+            <td colspan="4">SUBTOTAL</td>
+            <td class="total">Rs {{gtamt}}</td>
+          </tr>
+          <tr>
+            <td colspan="4">TAX 18%</td>
+            <td class="total">Rs {{tax}}</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="grand total">GRAND TOTAL</td>
+            <td class="grand total">Rs {{taxgamt}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="notices">
+        <div>NOTICE:</div>
+        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+      </div>
+	 
+	  
+    </main>	
+    
+	</div>
+<table>
+ <tr> <td align=""> <input type='button' style="height:40px;width:110px;color:black;" id='btn' value='Take Print' onclick='printDiv();'></td> </tr>
+<!--<tr> <td align=""><a href="/download?oid={{oid}}"> <input type='button' formaction= style="height:40px;width:110px;color:black;" id='btn' value='download' onclick='printDiv();'></a></td> </tr>-->
+ 
+  <tr> <td><br></td></tr>
+  </form>
+  </table>
+  </body>
+</html>
+<script>
+
+function printDiv() 
+{
+
+  var divToPrint=document.getElementById('DivIdToPrint');
+
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
+}
+  </script>       
+                   

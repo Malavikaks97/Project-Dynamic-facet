@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body><br/><br/>
+<table align="center" border="border" cellpadding="10" cellspacing="0">
+	<tr><th>
+	<form action="\bankingaction\" method="get">
+		<h2 align= "center">NET BANKING</h2><br/>
+		<input type="hidden" name="oid" value="{{oid}}"/>
+		<h4 align="left">CARD TYPE <select type="text" name="cardtype" size="1">
+			<option>Visa
+			<option>Rupay
+			<option>Maester
+			<option>others
+			</select></h4>
+		<h4 align="left">CARD NUMBER<input type="text" name="cardnum" value=""/></h4>
+		<h4 align="left">CVV <input type="text" name="cvv" value=""/></h4>
+		<h4 align="left">BANK <input type="text" name="bank" value=""/></h4>
+		<input type="submit" name="Pay" value="Pay"/>
+		</form>
+		<form action="\paymentload\">
+		<input type="submit" name="Back" value="Back"/>
+		</form>
+		</th></tr>
+</table>
+</body>
+</html>
+		

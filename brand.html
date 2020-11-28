@@ -1,0 +1,106 @@
+
+{% include "adminheader.html" %}
+<!-- 
+Body Section 
+-->
+<div class="row">
+
+	<div class="span12">
+	<div class="well np">
+		<div id="myCarousel" class="carousel slide homCar">
+		
+		<br>
+		<br>
+		
+		<br>
+		<br>
+		
+	<form action="\brand\" method="get">
+
+
+
+<table cellpadding="2"  align="center"
+cellspacing="2">
+
+			<tr><th colspan="2" align="center"><h2 align= "center" >BRAND</h2><br/></th></tr>
+			<tr><td>BRAND NAME </td><td> <input type="text" name="bname" value=""/><br/><br/></td></tr>
+			<tr><td colspan="2" align='center'><input type="submit" value="ADD" /></td>
+	
+</table>
+</form>
+<center>
+<table  cellspacing="20" border="1"   >
+<tr>
+<tr>
+		<th>BRAND</th>
+	</tr>
+	{% for i in list %}
+	<tr>
+		
+		<td>{{i.bname}}</td>
+		<td> <a align="right" href="/deleteaction1?id={{i.bid}}" title="delete an Wanted ads"><img src="/static/assets/img/trash.png/" height="2" width="25"></a></td>
+		
+		</tr>
+	{%endfor%}
+
+<br>
+</table>
+</center>
+<br>
+          </div>
+
+
+<div class="copyright">
+<div class="container">
+	<p class="pull-right">
+		<a href="#"><img src="/static/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/disc.png" alt="payment"></a>
+	</p>
+	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
+</div>
+</div>
+<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/assets/js/jquery.js"></script>
+	<script src="/static/assets/js/bootstrap.min.js"></script>
+	<script src="/static/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="/static/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="/static/assets/js/shop.js"></script>
+  </body>
+</html>
+<script type="text/javascript">
+var letters=/^[a-z A-Z]+$/;
+var numbers=/^[0-9]+$/;
+function check()
+{
+//alert("ss");
+	if(!document.getElementById("mobileno").value.match(numbers))
+	{
+		alert("please input numbers only,enter phone number");
+		return false;
+	}
+	else if(document.getElementById("mobileno").value.length<10)
+	{
+		alert("please input 10 digits only,enter phone number");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+

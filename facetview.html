@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+	<table align="center" border="border" cellpadding="10" cellspacing="0">
+	<tr>
+		<th>Feature Name</th>
+		<th>Feature Value</th>
+		<th>Count</th>
+	</tr>
+	{%for i in list%}
+	<tr>
+		<td>{{i.fname}}</td>
+		<td>{{i.fvalue}}</td>
+		<td>{{i.count}}</td>
+		<td><a href="/deletefacet?id={{i.facetid}}">Remove</a></td>
+	</tr>
+	{%endfor%}
+	</table>
+	<br/><br/>
+	<table align="center" border="border" cellpadding="10" cellspacing="0">
+	<tr>
+		<th>Item id</th>
+		<th>Item name</th>
+		<th>Price</th>
+		<th>Description</th>
+		<th>Quantity</th>
+		<th>Image</th>
+	</tr>
+	{%for i in list1%}
+	<tr>
+		<td>{{i.itemid}}</td>
+		<td>{{i.itemname}}</td>
+		<td>{{i.price}}</td>
+		<td>{{i.des}}</td>
+		<td>{{i.qty}}</td>
+		<td><img src="{{ MEDIA_URL }}{{ i.image }}"  height="150" width="250" alt="" /></td>
+		<td><a href="/deleteaction2?id={{i.itemid}}">delete</a></td>
+		<!--<td><a href="/order?itemid={{i.itemid}}">order</a></td>-->
+		<td><a href="/cart?itemid={{i.itemid}}">add to cart</a></td>
+		</tr>
+	{%endfor%}
+	</table>
+</body>
+</html>

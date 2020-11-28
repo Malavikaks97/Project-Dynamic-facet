@@ -1,0 +1,85 @@
+{% include "userheader.html" %}
+	<!--
+Body Section 
+-->
+
+
+
+<!--
+New Products
+-->
+<div class="well well-small">
+		  
+		  <hr class="soften"/>
+		  <div class="row-fluid">
+		  <center>
+<table align="center" border="border" cellpadding="10" cellspacing="0">
+	<tr><th>
+	<form action="\bankingaction\" method="get">
+		<h2 align= "center">NET BANKING</h2><br/>
+		<input type="text" name="oid" value="{{oid}}"/>
+		<h4 align="left">CARD TYPE <select type="text" name="cardtype" size="1">
+			<option>Visa
+			<option>Rupay
+			<option>Maester
+			<option>others
+			</select></h4>
+		<h4 align="left">CARD NUMBER<input type="text" name="cardnum" value=""/></h4>
+		<h4 align="left">CVV <input type="text" name="cvv" value=""/></h4>
+		<h4 align="left">BANK <input type="text" name="bank" value=""/></h4>
+		<input type="submit" name="Pay" value="Pay"/>
+		</form>
+		<form action="\paymentload\">
+		<input type="submit" name="Back" value="Back"/>
+		</form>
+		</th></tr>
+ </table>
+		 </center>
+	</div>
+	</div>
+
+	
+	<!--
+	Featured Products
+	-->
+		
+
+	
+
+<!-- 
+Clients 
+-->
+
+<!--
+Footer
+-->
+<footer>
+
+</footer>
+</div><!-- /container -->
+
+<div class="copyright">
+<div class="container">
+	<p class="pull-right">
+		<a href="#"><img src="/static/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/disc.png" alt="payment"></a>
+	</p>
+	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
+</div>
+</div>
+<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/assets/js/jquery.js"></script>
+	<script src="/static/assets/js/bootstrap.min.js"></script>
+	<script src="/static/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="/static/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="/static/assets/js/shop.js"></script>
+  </body>
+</html>
+
+
+
+

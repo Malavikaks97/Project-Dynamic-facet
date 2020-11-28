@@ -1,0 +1,83 @@
+
+{% include "adminheader.html" %}
+<!-- 
+Body Section 
+-->
+<div class="row">
+
+	<div class="span12">
+	<div class="well np">
+		<div id="myCarousel" class="carousel slide homCar">
+		
+		<br>
+		<br>
+		
+		<br>
+		<br>
+		
+	<form action="\featureaction\" method="get">
+
+
+
+<table cellpadding="2"  align="center"
+cellspacing="2">
+		<h2 align= "center">FEATURE</h2><br/>
+		<input type="hidden" name="itemid" value="{{itemid}}" readonly /><br/><br/>
+	<tr><td>	FEATURE NAME:</td><td><input type="text" name="fname" value=""/><br/><br/></td></tr>
+		<tr><td>FEATURE VALUE:</td><td><input type="text" name="fvalue" value=""/><br/><br/></td></tr>
+		<tr><td  align='center'><input type="submit" name="Add" value="Add"/></td>
+		
+		<td>
+		</form><form action="\viewitem\">
+		
+		<input type="submit" name="Back" value="Back"/></td> </form></tr>
+	</table>
+	
+	
+	
+<center>
+<table  cellspacing="20" border="1"   >
+<tr>
+<tr>
+		<th>FEATURE NAME</th>
+		<th>FEATURE VALUE</th>
+	</tr>
+	{%for i in list%}
+	<tr>
+		<td>{{i.fname}}</td>
+		<td>{{i.fvalue}}</td>
+		<td><a href="/deleteaction3?id={{i.fid}}">delete</a></td>
+		</tr>
+	{%endfor%}
+	
+<br>
+</table>
+</center>
+<br>
+          </div>
+
+
+<div class="copyright">
+<div class="container">
+	<p class="pull-right">
+		<a href="#"><img src="/static/assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="/static/assets/img/disc.png" alt="payment"></a>
+	</p>
+	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
+</div>
+</div>
+<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/assets/js/jquery.js"></script>
+	<script src="/static/assets/js/bootstrap.min.js"></script>
+	<script src="/static/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="/static/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="/static/assets/js/shop.js"></script>
+  </body>
+</html>
+		
+		
+		

@@ -1,0 +1,19 @@
+<html>
+<head></head>
+<body>
+	<table align="center" border="border" cellspacing="0">
+	<tr>
+		<th>category code</th>
+		<th>category name<th>
+	</tr>
+	{%for i in list%}
+	<tr>
+		<td>{{i.ccode}}</td>
+		<td>{{i.cname}}</td>
+		<td><a href="/deleteaction?id={{i.ccode}}">delete</a></td>
+		<td><a href="/it?ccode={{i.ccode}}">add product</a></td>
+		</tr>
+	{%endfor%}
+	</table>
+</body>
+</html>
